@@ -15,11 +15,12 @@ class React_Select_Field extends Component {
      * @param {Object} e
      * @return {void}
      */
-    handleChange = ( e ) => {
-        const { id, onChange } = this.props;
-
-        onChange( id, e.value );
-    }
+    handleChange = selectedOption => {
+        this.setState(
+            { selectedOption },
+            () => console.log(`Option selected:`, this.state.selectedOption)
+        );
+    };
 
     /**
      * Get Icon by Value.
@@ -113,6 +114,7 @@ class React_Select_Field extends Component {
                         id={ id }
                         name={ name }
                         value={ value }
+                        onChange={ this.handleChange }
                         options={ field.options }
                         className="cf-react__select"
                         classNamePrefix="cf-react-select"
