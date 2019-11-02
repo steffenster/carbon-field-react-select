@@ -84,6 +84,7 @@ class React_Select_Field extends Component {
         const { Option } = components;
         const {
             icons,
+            multi,
         } = field.props;
         let customComponents = {};
         let value = field.value ? { value: field.value, label: this.getLabel( field.value ) } : '';
@@ -113,6 +114,7 @@ class React_Select_Field extends Component {
                         id={ id }
                         name={ name }
                         value={ value }
+                        isMulti
                         defaultValue={ field.options [0] }
                         options={ field.options }
                         onChange={ this.handleChange }
